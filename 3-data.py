@@ -32,7 +32,7 @@ training_data_array = np.array([generate_true_data()])
 training_label_array = np.array([1])
 
 #generate training data
-for x in range(16000):
+for x in range(800):
     data_type = np.random.randint(0,2)
     if data_type == 1:
         training_data_array = np.vstack((np.array([generate_true_data()]), training_data_array))
@@ -50,7 +50,7 @@ testing_data_array = np.array([generate_true_data()])
 testing_label_array = np.array([1])
 
 #generate testing data
-for x in range(4000):
+for x in range(200):
     data_type = np.random.randint(0,2)
     if data_type == 1:
         testing_data_array = np.vstack((np.array([generate_true_data()]), testing_data_array))
