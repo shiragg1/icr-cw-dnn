@@ -2,7 +2,7 @@
 Lexington Smith and Shira Goldhaber-Gordon, 2021 Institute for Computing in Research Project. Licensed under the GNU general Public License 3.0.
 
 ## Description
-This deep neural network reads and analyzes data sets with an end goal of identifying a sine wave amidst noise. This sine wave is a model of a real continuous gravitational wave meaning that it is possible for our neural net to use real LIGO data as well as what we generated. We used TensorFlow Keras to build this neural net which has performed well with current testing.  
+This deep neural network reads and analyzes data sets with an end goal of identifying a sine wave amidst noise. This sine wave is a model of a continuous gravitational wave meaning that it is possible for our neural net to use real LIGO data as well as what we generated. We used TensorFlow Keras to build this neural net which has performed well with current testing.  
 
 
 ## Installation and Instructions  
