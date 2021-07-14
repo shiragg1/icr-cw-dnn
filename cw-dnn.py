@@ -19,6 +19,11 @@ testing_labels = np.load(p / "testing-0.5-labels.npy")
 
 class_names = ['no_wave', 'wave']
 
+#allocate memory
+physical_devices = tf.config.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
+
 #set up the layers
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(1024, activation='relu'),
@@ -51,12 +56,12 @@ print(np.argmax(predictions[0]))
 print(testing_labels[0])
 
 #graph how well the dnn did
-def plot_value_array(i, predictions_array, true_label):
-  true_label = true_label[i]
+def plot_value_array(i, predictions_array, true_label_array):
+  true_label = true_label_array[i]
   plt.grid(False)
   plt.xticks(range(10))
   plt.yticks([])
-  thisplot = plt.bar(range(10), predictions_array, color="#777777")
+  thisplot = plt.bar(range(2), predictions_array, color="#777777")
   plt.ylim([0, 1])
   predicted_label = np.argmax(predictions_array)
 
@@ -66,7 +71,7 @@ def plot_value_array(i, predictions_array, true_label):
 
 #plot the first 15 waves/no waves, their predicted labels, and the true labels
 #color correct predictions in blue and incorrect predictions in red
-time = np.linspace(0, 100, num = 1024)
+time = np.linspace(0, 100, num = 500000)
 num_rows = 5
 num_cols = 3
 num_graphs = num_rows*num_cols
