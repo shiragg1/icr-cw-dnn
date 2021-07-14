@@ -11,7 +11,7 @@ Use:
 ```bash
 git clone -b master git@github.com:shiragg1/icr-cw-dnn.git
 ```
-to clone the repository and access our code. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run.
+to clone the repository and access our code. 
 To download the data files, run:
 
 ```bash
@@ -32,7 +32,7 @@ chmod +x data-check.py
 ./data-check.py
 ```
 If you opted to download only one of the data sets you will have to edit the data-check.py file to only check for that data set.
-Now to run the neural net! Using the same commands as before we will now run,
+Now to run the neural net. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Using the same commands as before we will now run,
 
 ```bash
 chmod +x cw-dnn.py
