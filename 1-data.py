@@ -12,9 +12,9 @@ def sin_wave(time, frequency, phase):
 
 #function generates random sin waves with added noise
 def generate_true_data():
-    time = np.linspace(0, 100, num = 1024)
+    time = np.linspace(0, 100, num = 500000)
     #frequencies based on the range of CWs
-    frequency = np.random.uniform(low=20, high=2000)
+    frequency = np.random.uniform(low=20, high=1000)
     phase = np.random.uniform(low=0, high=np.pi*2)
 
     data = sin_wave(time, frequency, phase)
@@ -24,7 +24,7 @@ def generate_true_data():
 
 #function generates random gaussian noise
 def generate_false_data():
-    data = np.zeros(1024, dtype=float)
+    data = np.zeros(500000, dtype=float)
     data_noisy = data + np.random.normal(0, 1, data.shape)
     return data_noisy
 
