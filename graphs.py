@@ -26,7 +26,7 @@ def graph(data, labels, noise):
     print(training_labels[i])
 
     #make a figure of the wave
-    plt.figure(constrained_layout=True)
+    plt.figure(figsize=(10.0, 6.0), constrained_layout=True)
     plt.subplot(2, 2, 1)
     plt.plot(time, training_data[i][0:500])
     title = "CW with ", noise, " Noise"
@@ -70,16 +70,16 @@ def graph(data, labels, noise):
 #graph pair of graphs for each amount of noise
 
 #0.5 noise data
-graph("training-0.5-data.npy", "training-0.5-labels.npy", "0.5")
+graph("training-0.5-data.npy", "training-0.5-labels.npy", 0.5)
 
 #1 noise data
-graph("training-1-data.npy", "training-1-labels.npy", "1")
+graph("training-1-data.npy", "training-1-labels.npy", 1)
 
 #2 noise data
-graph("training-2-data.npy", "training-2-labels.npy", "2")
+graph("training-2-data.npy", "training-2-labels.npy", 2)
 
 #3 noise data
-graph("training-3-data.npy", "training-3-labels.npy", "3")
+graph("training-3-data.npy", "training-3-labels.npy", 3)
 
 
 exit()
