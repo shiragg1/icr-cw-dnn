@@ -12,3 +12,8 @@ chmod +x 2-data.py
 
 chmod +x 3-data.py
 ./3-data.py
+
+chmod +x rand-data.py
+./rand-data.py
+
+echo "data successfully downloaded"

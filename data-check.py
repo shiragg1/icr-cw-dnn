@@ -84,3 +84,23 @@ print('shape: ', testing_3_data.shape)
 
 print('labels for testing data with 3 noise: ', testing_3_labels)
 print('shape: ', testing_3_labels.shape)
+
+#check random noise data
+
+training_rand_data = np.load(p / 'training-rand-data.npy')
+training_rand_labels = np.load(p / 'training-rand-labels.npy')
+
+print('training data with random noise: ', training_rand_data)
+print('shape: ', training_rand_data.shape)
+
+print('labels for training data with random noise: ', training_rand_labels)
+print('shape: ', training_rand_labels.shape)
+
+testing_rand_data = np.load(p / 'testing-rand-data.npy')
+testing_rand_labels = np.load(p /'testing-rand-labels.npy')
+
+print('testing data with random noise: ', testing_rand_data)
+print('shape: ', testing_rand_data.shape)
+
+print('labels for testing data with random noise: ', testing_rand_labels)
+print('shape: ', testing_rand_labels.shape)
