@@ -29,8 +29,7 @@ def graph(data, labels, noise):
     plt.figure(figsize=(10.0, 6.0), constrained_layout=True)
     plt.subplot(2, 2, 1)
     plt.plot(time, training_data[i][0:500])
-    title = "CW with ", noise, " Noise"
-    plt.title(title)
+    plt.title("CW with {} Noise".format(noise))
     plt.xlabel("Time")
 
     #make a figure of the spectrum
@@ -38,8 +37,7 @@ def graph(data, labels, noise):
 
     plt.subplot(2, 2, 2)
     plt.plot(freq, sp_true.real)
-    title = "CW with ", noise, " Noise Spectrum"
-    plt.title(title)
+    plt.title("CW with {} Noise Spectrum".format(noise))
     plt.xlabel("Frequency")
 
     #find first no wave
@@ -52,8 +50,7 @@ def graph(data, labels, noise):
     print(training_labels[j])
     plt.subplot(2, 2, 3)
     plt.plot(time, training_data[j][0:500])
-    title = "No CW with ", noise, " Noise"
-    plt.title(title)
+    plt.title("No CW with {} Noise".format(noise))
     plt.xlabel("Time")
 
     #make a figure of the spectrum
@@ -61,8 +58,7 @@ def graph(data, labels, noise):
 
     plt.subplot(2, 2, 4)
     plt.plot(freq, sp_false.real)
-    title = "No CW with ", noise, " Noise Spectrum"
-    plt.title(title)
+    plt.title("No CW with {} Noise Spectrum".format(noise))
     plt.xlabel("Frequency")
 
     plt.savefig(p / "{}-noise-figure.png".format(noise))
