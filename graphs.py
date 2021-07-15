@@ -14,7 +14,7 @@ def graph(data, labels, noise):
     training_labels = np.load(p / labels)
 
     #set certain base values
-    time = np.linspace(0, 0.1, num = 500)
+    time = np.linspace(0, 0.01, num = 500)
     freq = np.fft.fftfreq(time.shape[-1])
 
     #find first actual wave

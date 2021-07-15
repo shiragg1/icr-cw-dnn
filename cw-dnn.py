@@ -22,12 +22,12 @@ class_names = ['no_wave', 'wave']
 
 #set up the layers
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(1024, activation='relu'),
     tf.keras.layers.Dense(2)
 ])
 
