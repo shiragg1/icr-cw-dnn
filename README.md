@@ -21,7 +21,7 @@ chmod +x load-data.sh
 ```bash
 ./load-data.sh
 ```
-Alternatively to running these two commands -which will download all four data sets- you can just download one of the data sets directly from the .py file.
+Alternatively to running these two commands -which will download all five data sets- you can just download one of the data sets directly from the .py file.
 To make sure the data was downloaded correctly, run
 
 ```bash
