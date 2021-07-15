@@ -41,6 +41,15 @@ chmod +x cw-dnn.py
 ```bash
 ./cw-dnn.py
 ```
+We found higher accuracy in the neural net that took fourier transforms of the data. Set the correct path in cw-fft-dnn.py and set the four data files to the file you wish to run. Run,
+
+```bash
+chmod +x cw-fft-dnn.py
+```
+
+```bash
+./cw-fft-dnn.py
+```
 To create graphs displaying waves and their fourier transforms, run,
 
 ```bash
