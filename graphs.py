@@ -3,164 +3,84 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-#set up path to directory, replace with path on your computer
-p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
+#graphing function
+def graph(data, labels, noise):
+
+    #set up path to directory, replace with path on your computer
+    p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
+
+    #load data
+    training_data = np.load(p / data)
+    training_labels = np.load(p / labels)
+
+    #set certain base values
+    time = np.linspace(0, 0.1, num = 500)
+    freq = np.fft.fftfreq(time.shape[-1])
+
+    #find first actual wave
+    i = 0
+
+    while training_labels[i] != 1:
+        i += 1
+
+    print(training_labels[i])
+
+    #make a figure of the wave
+    plt.figure(constrained_layout=True)
+    plt.subplot(2, 2, 1)
+    plt.plot(time, training_data[i][0:500])
+    title = "CW with ", noise, " Noise"
+    plt.title(title)
+    plt.xlabel("Time")
+
+    #make a figure of the spectrum
+    sp_true = np.fft.fft(training_data[i][0:500])
+
+    plt.subplot(2, 2, 2)
+    plt.plot(freq, sp_true.real)
+    title = "CW with ", noise, " Noise Spectrum"
+    plt.title(title)
+    plt.xlabel("Frequency")
+
+    #find first no wave
+    j = 0
+
+    while training_labels[j] != 0:
+        j += 1
+
+    #make a figure of the noise
+    print(training_labels[j])
+    plt.subplot(2, 2, 3)
+    plt.plot(time, training_data[j][0:500])
+    title = "No CW with ", noise, " Noise"
+    plt.title(title)
+    plt.xlabel("Time")
+
+    #make a figure of the spectrum
+    sp_false = np.fft.fft(training_data[j][0:500])
+
+    plt.subplot(2, 2, 4)
+    plt.plot(freq, sp_false.real)
+    title = "No CW with ", noise, " Noise Spectrum"
+    plt.title(title)
+    plt.xlabel("Frequency")
+
+    plt.savefig(p / "{}-noise-figure.png".format(noise))
 
 #graph pair of graphs for each amount of noise
 
-time = np.linspace(0, 0.1, num = 500)
-
 #0.5 noise data
-
-training_05_data = np.load(p / 'training-0.5-data.npy')
-training_05_labels = np.load(p / 'training-0.5-labels.npy')
-
-i = 0
-
-while training_05_labels[i] != 1:
-    i += 1
-
-print(training_05_labels[i])
-plt.figure(constrained_layout=True)
-plt.subplot(2, 1, 1)
-plt.plot(time, training_05_data[i][0:500])
-plt.title("CW with 0.5 Noise")
-plt.xlabel("Time")
-
-j = 0
-
-while training_05_labels[j] != 0:
-    j += 1
-
-print(training_05_labels[j])
-plt.subplot(2, 1, 2)
-plt.plot(time, training_05_data[j][0:500])
-plt.title("No CW with 0.5 Noise")
-plt.xlabel("Time")
-
-plt.savefig(p / "0.5-noise-figure.png")
+graph("training-0.5-data.npy", "training-0.5-labels.npy", "0.5")
 
 #1 noise data
-
-training_1_data = np.load(p / 'training-1-data.npy')
-training_1_labels = np.load(p / 'training-1-labels.npy')
-
-i = 0
-
-while training_1_labels[i] != 1:
-    i += 1
-
-print(training_1_labels[i])
-plt.figure(constrained_layout=True)
-plt.subplot(2, 1, 1)
-plt.plot(time, training_1_data[i][0:500])
-plt.title("CW with 1 Noise")
-plt.xlabel("Time")
-
-j = 0
-
-while training_1_labels[j] != 0:
-    j += 1
-
-print(training_1_labels[j])
-plt.subplot(2, 1, 2)
-plt.plot(time, training_1_data[j][0:500])
-plt.title("No CW with 1 Noise")
-plt.xlabel("Time")
-
-plt.savefig(p / "1-noise-figure.png")
-
+graph("training-1-data.npy", "training-1-labels.npy", "1")
 
 #2 noise data
-
-training_2_data = np.load(p / 'training-2-data.npy')
-training_2_labels = np.load(p / 'training-2-labels.npy')
-
-i = 0
-
-while training_2_labels[i] != 1:
-    i += 1
-
-print(training_2_labels[i])
-plt.figure(constrained_layout=True)
-plt.subplot(2, 1, 1)
-plt.plot(time, training_2_data[i][0:500])
-plt.title("CW with 2 Noise")
-plt.xlabel("Time")
-
-j = 0
-
-while training_2_labels[j] != 0:
-    j += 1
-
-print(training_2_labels[j])
-plt.subplot(2, 1, 2)
-plt.plot(time, training_2_data[j][0:500])
-plt.title("No CW with 2 Noise")
-plt.xlabel("Time")
-
-plt.savefig(p / "2-noise-figure.png")
-
+graph("training-2-data.npy", "training-2-labels.npy", "2")
 
 #3 noise data
+graph("training-3-data.npy", "training-3-labels.npy", "3")
 
-training_3_data = np.load(p / 'training-3-data.npy')
-training_3_labels = np.load(p / 'training-3-labels.npy')
-
-i = 0
-
-while training_3_labels[i] != 1:
-    i += 1
-
-print(training_3_labels[i])
-plt.figure(constrained_layout=True)
-plt.subplot(2, 1, 1)
-plt.plot(time, training_3_data[i][0:500])
-plt.title("CW with 3 Noise")
-plt.xlabel("Time")
-
-j = 0
-
-while training_3_labels[j] != 0:
-    j += 1
-
-print(training_3_labels[j])
-plt.subplot(2, 1, 2)
-plt.plot(time, training_3_data[j][0:500])
-plt.title("No CW with 3 Noise")
-plt.xlabel("Time")
-
-plt.savefig(p / "3-noise-figure.png")
-
-#random noise data
-
-training_rand_data = np.load(p / 'training-rand-data.npy')
-training_rand_labels = np.load(p / 'training-rand-labels.npy')
-
-i = 0
-
-while training_rand_labels[i] != 1:
-    i += 1
-
-print(training_rand_labels[i])
-plt.figure(constrained_layout=True)
-plt.subplot(2, 1, 1)
-plt.plot(time, training_rand_data[i][0:500])
-plt.title("CW with Random Noise")
-plt.xlabel("Time")
-
-j = 0
-
-while training_rand_labels[j] != 0:
-    j += 1
-
-print(training_rand_labels[j])
-plt.subplot(2, 1, 2)
-plt.plot(time, training_rand_data[j][0:500])
-plt.title("No CW with Random Noise")
-plt.xlabel("Time")
-
-plt.savefig(p / "rand-noise-figure.png")
 
 exit()
 

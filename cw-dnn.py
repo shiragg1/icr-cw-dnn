@@ -12,26 +12,22 @@ from pathlib import Path
 p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
 
 #load data, replace number with correct number
-training_data = np.load(p / "training-0.5-data.npy")
-training_labels = np.load(p / "training-0.5-labels.npy")
-testing_data = np.load(p / "testing-0.5-data.npy")
-testing_labels = np.load(p / "testing-0.5-labels.npy")
+training_data = np.load(p / "training-1-data.npy")
+training_labels = np.load(p / "training-1-labels.npy")
+testing_data = np.load(p / "testing-1-data.npy")
+testing_labels = np.load(p / "testing-1-labels.npy")
 
 class_names = ['no_wave', 'wave']
-
-#allocate memory
-physical_devices = tf.config.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
 #set up the layers
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(1024, activation='relu'),
-    tf.keras.layers.Dense(1024, activation='relu'),
-    tf.keras.layers.Dense(1024, activation='relu'),
-    tf.keras.layers.Dense(1024, activation='relu'),
-    tf.keras.layers.Dense(1024, activation='relu'),
-    tf.keras.layers.Dense(1024, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
     tf.keras.layers.Dense(2)
 ])
 
