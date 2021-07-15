@@ -41,6 +41,16 @@ chmod +x cw-dnn.py
 ```bash
 ./cw-dnn.py
 ```
+To create graphs displaying waves and their fourier transforms, run,
+
+```bash
+chmod +x graphs.py
+```
+
+```bash
+./graphs.py
+```
+
 ## Notes
 *The numbers in the data set names refer to the standard deviation of noise within that given dataset.
 
