@@ -37,7 +37,7 @@ model.compile(optimizer='adam',
     metrics=['accuracy'])
 
 #train the model
-model.fit(np.abs(np.fft.fft(training_data)), training_labels, epochs=10)
+model.fit(np.abs(np.fft.fft(training_data)), training_labels, epochs=15)
 
 #test the accuracy
 test_loss, test_acc = model.evaluate(np.abs(np.fft.fft(testing_data)), testing_labels, verbose=2)
