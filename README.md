@@ -6,12 +6,11 @@ This deep neural network reads and analyzes data sets with an end goal of identi
 
 
 ## Installation and Instructions  
-Use:
+To clone the repository and access our code, run:
 
 ```bash
 git clone git@github.com:shiragg1/icr-cw-dnn.git
 ```
-To clone the repository and access our code. 
 To download the data files, run:
 
 ```bash
