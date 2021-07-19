@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 #set up path to directory, replace with path on your computer
-p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
+p = Path('/your/path/here/')
 
 #load data, replace number with correct number
 training_data = np.load(p / "training-1-data.npy")

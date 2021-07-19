@@ -7,7 +7,7 @@ from pathlib import Path
 def graph(data, labels, noise):
 
     #set up path to directory, replace with path on your computer
-    p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
+    p = Path('/your/path/here/')
 
     #load data
     training_data = np.load(p / data)

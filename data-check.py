@@ -3,7 +3,7 @@ import numpy as np
 from pathlib import Path
 
 #set up path to directory, replace with path on your computer
-p = Path('/home/shira/Documents/icr/icr-cw-dnn/')
+p = Path('/your/path/here/')
 
 #check 0.5 noise data
 
