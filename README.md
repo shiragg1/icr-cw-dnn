@@ -9,7 +9,7 @@ This deep neural network reads and analyzes data sets with an end goal of identi
 Use:
 
 ```bash
-git clone -b master git@github.com:shiragg1/icr-cw-dnn.git
+git clone git@github.com:shiragg1/icr-cw-dnn.git
 ```
 to clone the repository and access our code. 
 To download the data files, run:
@@ -31,8 +31,9 @@ chmod +x data-check.py
 ```bash
 ./data-check.py
 ```
-If you opted to download only one of the data sets you will have to edit the data-check.py file to only check for that data set.
-Now to run the neural net. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Using the same commands as before we will now run,
+This will print out the arrays and their shapes. If you opted to download only one of the data sets you will have to edit the data-check.py file to only check for that data set.
+
+Now to run the neural network. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Then run,
 
 ```bash
 chmod +x cw-dnn.py
@@ -41,7 +42,7 @@ chmod +x cw-dnn.py
 ```bash
 ./cw-dnn.py
 ```
-We found higher accuracy in the neural net that took fourier transforms of the data. Set the correct path in cw-fft-dnn.py and set the four data files to the file you wish to run. Run,
+We found higher accuracy in the neural network that took the fourier transforms of the data. We recomend running this DNN rather than the previous one. Set the correct path in cw-fft-dnn.py and set the four data files to the file you wish to run. Then run,
 
 ```bash
 chmod +x cw-fft-dnn.py
@@ -64,4 +65,6 @@ chmod +x graphs.py
 *The numbers in the data set names refer to the standard deviation of noise within that given dataset.
 
 *LIGO has not been able to detect continuous gravitational waves before; however, machine learning advances in neural networks like this one look promising for future directions.
+
+*At the moment, the DNN accuracy is not extremely high for high noise data. However, if you have high computing power and can generate more data files than the default 2,000 the accuracy should improve substantially.
 
