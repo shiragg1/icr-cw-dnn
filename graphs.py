@@ -33,7 +33,7 @@ def graph(data, labels, noise):
     plt.xlabel("Time")
 
     #make a figure of the spectrum
-    sp_true = np.fft.fft(training_data[i][0:500])
+    sp_true = np.abs(np.fft.fft(training_data[i][0:500]))
 
     plt.subplot(2, 2, 2)
     plt.plot(freq, sp_true.real)
@@ -54,7 +54,7 @@ def graph(data, labels, noise):
     plt.xlabel("Time")
 
     #make a figure of the spectrum
-    sp_false = np.fft.fft(training_data[j][0:500])
+    sp_false = np.abs(np.fft.fft(training_data[j][0:500]))
 
     plt.subplot(2, 2, 4)
     plt.plot(freq, sp_false.real)
