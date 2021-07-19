@@ -11,7 +11,7 @@ Use:
 ```bash
 git clone git@github.com:shiragg1/icr-cw-dnn.git
 ```
-to clone the repository and access our code. 
+To clone the repository and access our code. 
 To download the data files, run:
 
 ```bash
