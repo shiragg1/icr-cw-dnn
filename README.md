@@ -22,7 +22,7 @@ chmod +x load-data.sh
 ./load-data.sh
 ```
 Alternatively to running these two commands -which will download all five data sets- you can just download one of the data sets directly from the .py file.
-To make sure the data was downloaded correctly, run
+To make sure the data was downloaded correctly, run:
 
 ```bash
 chmod +x data-check.py
@@ -33,7 +33,7 @@ chmod +x data-check.py
 ```
 This will print out the arrays and their shapes. If you opted to download only one of the data sets you will have to edit the data-check.py file to only check for that data set.
 
-Now to run the neural network. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Then run,
+Now to run the neural network. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Then run:
 
 ```bash
 chmod +x cw-dnn.py
@@ -42,7 +42,7 @@ chmod +x cw-dnn.py
 ```bash
 ./cw-dnn.py
 ```
-We found higher accuracy in the neural network that took the fourier transforms of the data. We recomend running this DNN rather than the previous one. Set the correct path in cw-fft-dnn.py and set the four data files to the file you wish to run. Then run,
+We found higher accuracy in the neural network that took the fourier transforms of the data. We recomend running this DNN rather than the previous one. Set the correct path in cw-fft-dnn.py and set the four data files to the file you wish to run. Then run:
 
 ```bash
 chmod +x cw-fft-dnn.py
@@ -51,7 +51,7 @@ chmod +x cw-fft-dnn.py
 ```bash
 ./cw-fft-dnn.py
 ```
-To create graphs displaying waves and their fourier transforms, run,
+To create graphs displaying waves and their fourier transforms, set the correct path then run:
 
 ```bash
 chmod +x graphs.py
