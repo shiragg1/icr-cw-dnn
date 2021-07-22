@@ -11,7 +11,7 @@ To clone the repository and access our code, run:
 ```bash
 git clone git@github.com:shiragg1/icr-cw-dnn.git
 ```
-To download the data files, run:
+To generate the data files, run:
 
 ```bash
 chmod +x load-data.sh
@@ -20,8 +20,8 @@ chmod +x load-data.sh
 ```bash
 ./load-data.sh
 ```
-Alternatively to running these two commands - which will download all five data sets - you can just download one of the data sets directly from the .py file.
-To make sure the data was downloaded correctly, run:
+Alternatively to running these two commands - which will generate all five data sets - you can just generate one of the data sets directly from the .py file.
+To make sure the data was generated correctly, run:
 
 ```bash
 chmod +x data-check.py
@@ -30,7 +30,7 @@ chmod +x data-check.py
 ```bash
 ./data-check.py
 ```
-This will print out the arrays and their shapes. If you opted to download only one of the data sets you will have to edit the data-check.py file to only check for that data set.
+This will print out the arrays and their shapes. If you opted to generate only one of the data sets you will have to edit the data-check.py file to only check for that data set.
 
 Now to run the neural network. Set the correct path in cw-dnn.py and set the four data files to the file you wish to run. Then run:
 
