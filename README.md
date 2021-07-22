@@ -60,10 +60,21 @@ chmod +x graphs.py
 ./graphs.py
 ```
 
+To run the fft DNN on all the noise groups multiple times to record accuracies and graph the training process, run:
+
+```bash
+chmod +x test-cw-fft-dnn.py
+```
+
+```bash
+./test-cw-fft-dnn.py
+```
+Unfortunately the test program requires a high RAM computer.
+
 ## Notes
 *The numbers in the data set names refer to the standard deviation of noise within that given dataset.
 
 *LIGO has not been able to detect continuous gravitational waves before; however, machine learning advances in neural networks like this one look promising for future directions.
 
-*At the moment, the DNN accuracy is not extremely high for high noise data. However, if you have high computing power and can generate more data files than the default 2,000 the accuracy should improve substantially.
+*At the moment, the DNN accuracy is not extremely high for high noise data. However, if you have high computing power and can run more data files than the default 2,000 the accuracy should improve substantially. To change this, edit the number of files being created in the number-data.py files.
 
